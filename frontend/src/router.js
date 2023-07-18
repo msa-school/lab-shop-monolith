@@ -5,10 +5,11 @@ import Router from 'vue-router'
 Vue.use(Router);
 
 
-import OrderManager from "./components/listers/OrderCards"
-import OrderDetail from "./components/listers/OrderDetail"
-import InventoryManager from "./components/listers/InventoryCards"
-import InventoryDetail from "./components/listers/InventoryDetail"
+import MonolithOrderManager from "./components/listers/MonolithOrderCards"
+import MonolithOrderDetail from "./components/listers/MonolithOrderDetail"
+
+import InventoryInventoryManager from "./components/listers/InventoryInventoryCards"
+import InventoryInventoryDetail from "./components/listers/InventoryInventoryDetail"
 
 
 export default new Router({
@@ -16,24 +17,25 @@ export default new Router({
     base: process.env.BASE_URL,
     routes: [
             {
-                path: '/orders',
-                name: 'OrderManager',
-                component: OrderManager
+                path: '/monoliths/orders',
+                name: 'MonolithOrderManager',
+                component: MonolithOrderManager
             },
             {
-                path: '/orders/:id',
-                name: 'OrderDetail',
-                component: OrderDetail
+                path: '/monoliths/orders/:id',
+                name: 'MonolithOrderDetail',
+                component: MonolithOrderDetail
+            },
+
+            {
+                path: '/inventories/inventories',
+                name: 'InventoryInventoryManager',
+                component: InventoryInventoryManager
             },
             {
-                path: '/inventories',
-                name: 'InventoryManager',
-                component: InventoryManager
-            },
-            {
-                path: '/inventories/:id',
-                name: 'InventoryDetail',
-                component: InventoryDetail
+                path: '/inventories/inventories/:id',
+                name: 'InventoryInventoryDetail',
+                component: InventoryInventoryDetail
             },
 
 

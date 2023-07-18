@@ -1,6 +1,8 @@
 server:
   port: 8080
-
+spring:
+  application:
+    name: monolith
 ---
 
 spring:
@@ -10,6 +12,7 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+        implicit_naming_strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
   cloud:
     stream:
       kafka:
@@ -37,9 +40,13 @@ logging:
     org.hibernate.type: trace
     org.springframework.cloud: debug
 
+api:
+  url:
+    inventory: localhost:0
+
 
 server:
-  port: 8081
+  port: 0
 
 ---
 
@@ -66,5 +73,9 @@ spring:
         event-out:
           destination: labshopmonolith
           contentType: application/json
+
+api:
+  url:
+    inventory:8080
 
 
